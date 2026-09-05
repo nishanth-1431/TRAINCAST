@@ -1,0 +1,65 @@
+# ============================================
+# TRAINCAST — Root .gitignore
+# ============================================
+
+# ----- Internal Planning / Strategy / Prompts -----
+.internal/
+
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ----- Node / Frontend -----
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ----- Java / Spring Boot Backend -----
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+.mvn/wrapper/maven-wrapper.jar
+.gradle/
+build/
+
+# ----- Python / ML -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+*.egg
+.ipynb_checkpoints/
+venv/
+.venv/
+env/
+.env
+
+# ----- Database -----
+*.db
+*.sqlite3
+
+# ----- Docker -----
+docker-compose.override.yml
+
+# ----- Misc -----
+*.log
+logs/
+tmp/
+.cache/

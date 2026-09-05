@@ -1,0 +1,430 @@
+/* TRAINCAST Control Room Enterprise Operations CSS */
+
+.dashboard {
+  padding-bottom: var(--space-4);
+}
+
+/* Dispatch & Telemetry Ticker */
+.telemetry-ticker {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: linear-gradient(90deg, #0A192F 0%, #112B54 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+  font-size: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.ticker-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #60a5fa;
+  white-space: nowrap;
+  padding-right: 12px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.ticker-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: tickerFade 0.4s ease-in-out;
+}
+
+@keyframes tickerFade {
+  from { opacity: 0.3; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Enhanced KPI Cards */
+.control-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.control-kpi-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.control-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.control-kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--primary-navy);
+}
+
+.control-kpi-card.kpi-ontime::before { background-color: var(--status-green); }
+.control-kpi-card.kpi-delayed::before { background-color: var(--status-orange); }
+.control-kpi-card.kpi-risk::before { background-color: var(--status-red); }
+.control-kpi-card.kpi-avg::before { background-color: var(--status-purple); }
+
+.control-kpi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.control-kpi-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.control-kpi-value {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--primary-navy);
+  margin-bottom: 4px;
+}
+
+.control-kpi-sub {
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted);
+}
+
+/* Grids */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-4);
+}
+
+.map-panel {
+  grid-column: 1 / 2;
+}
+
+.table-panel {
+  grid-column: 1 / 3;
+}
+
+/* Segmented Tabs Control (fixes raw unstyled button bug) */
+.tabs {
+  display: flex;
+  gap: 4px;
+  background-color: #E2E8F0;
+  padding: 4px;
+  border-radius: var(--radius-md);
+  width: fit-content;
+}
+
+.tab-btn {
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tab-btn:hover {
+  color: var(--primary-navy);
+}
+
+.tab-btn.active {
+  background-color: #ffffff;
+  color: var(--primary-navy);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+/* Division Status Grid */
+.division-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.division-item {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.division-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.division-item-status {
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.division-item-alert {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Event Feed */
+.event-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 230px;
+  overflow-y: auto;
+}
+
+.event-feed-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  background-color: var(--bg-main);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  border-left: 3px solid #cbd5e1;
+}
+
+.event-feed-item.event-normal { border-left-color: #3b82f6; }
+.event-feed-item.event-warning { border-left-color: #f59e0b; background-color: #fffbeb; }
+.event-feed-item.event-recovery { border-left-color: #10b981; background-color: #ecfdf5; }
+.event-feed-item.event-hold { border-left-color: #ef4444; background-color: #fef2f2; }
+
+.event-time {
+  font-weight: 700;
+  color: var(--text-muted);
+  font-family: monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.event-train {
+  font-weight: 700;
+  color: var(--primary-navy);
+  flex-shrink: 0;
+}
+
+.event-desc {
+  flex: 1;
+  color: var(--text-main);
+}
+
+/* Simulation Controls */
+.sim-scenario-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sim-btn {
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background-color: white;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sim-btn:hover {
+  background-color: #F1F5F9;
+  border-color: #94A3B8;
+}
+
+.sim-btn.active {
+  background-color: var(--primary-navy);
+  color: white;
+  border-color: var(--primary-navy);
+}
+
+/* XAI Waterfall */
+.waterfall-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.waterfall-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: var(--bg-main);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+
+.waterfall-val {
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.waterfall-val.pos { color: var(--status-red); }
+.waterfall-val.neg { color: var(--status-green); }
+
+/* Table enhancements */
+.data-table th {
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background-color: #F8FAFC;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.data-table td {
+  padding: 12px 14px;
+  vertical-align: middle;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.data-table tbody tr:hover {
+  background-color: #F1F5F9 !important;
+}
+
+.type-pill {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: #E2E8F0;
+  color: #334155;
+}
+
+.type-pill.vande-bharat { background-color: #DBEAFE; color: #1D4ED8; }
+.type-pill.shatabdi { background-color: #FEF3C7; color: #B45309; }
+.type-pill.freight { background-color: #F3E8FF; color: #7E22CE; }
+
+/* System Status Matrix */
+.status-grid-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+}
+
+.status-matrix-card {
+  padding: 14px 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .map-panel, .table-panel {
+    grid-column: 1 / 2;
+  }
+}
+
+/* Network Map Full Page Layout */
+.network-map-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--header-height) - 80px);
+  min-height: 560px;
+}
+
+.network-map-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-3);
+  flex: 1;
+  min-height: 480px;
+  height: calc(100% - 45px);
+}
+
+.network-map-canvas-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: #F8FAFC;
+  box-shadow: var(--shadow-sm);
+}
+
+.network-map-drawer {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--primary-navy);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  height: 100%;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 1024px) {
+  .network-map-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 450px auto;
+    height: auto;
+  }
+  .network-map-page {
+    height: auto;
+  }
+}

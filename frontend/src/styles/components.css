@@ -1,0 +1,114 @@
+/* Common component styles */
+
+/* Card */
+.card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-3);
+  border: 1px solid var(--border-color);
+}
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-navy);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-navy-hover);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: var(--bg-main);
+  color: var(--primary-navy);
+  border: 1px solid var(--primary-navy);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+  text-decoration: none;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-green {
+  background-color: var(--status-green-bg);
+  color: var(--status-green);
+}
+
+.badge-orange {
+  background-color: var(--status-orange-bg);
+  color: var(--status-orange);
+}
+
+.badge-red {
+  background-color: var(--status-red-bg);
+  color: var(--status-red);
+}
+
+.badge-purple {
+  background-color: var(--status-purple-bg);
+  color: var(--status-purple);
+}
+
+/* Form Input */
+.form-input {
+  width: 100%;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--primary-navy);
+}
+
+/* Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.data-table th, .data-table td {
+  padding: var(--space-1) var(--space-2);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+  background-color: var(--bg-main);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.data-table tr:hover td {
+  background-color: var(--bg-main);
+}
