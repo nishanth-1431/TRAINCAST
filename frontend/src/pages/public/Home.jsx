@@ -189,13 +189,7 @@ const Home = () => {
                 <span className="stat-label">Daily Passengers</span>
               </div>
             </div>
-            <div className="stat-item">
-              <Sparkles className="stat-icon" size={22} />
-              <div className="stat-details">
-                <span className="stat-value">94.2%</span>
-                <span className="stat-label">AI ETA Accuracy</span>
-              </div>
-            </div>
+
           </div>
           <div className="stat-disclaimer">* Southern Railway trunk corridor evaluation dataset (SIH 2026)</div>
         </div>
@@ -277,7 +271,7 @@ const Home = () => {
                 16:34 IST
               </div>
               <div className="text-xs text-purple mt-1 font-medium" style={{ fontSize: '11px' }}>
-                ✓ 94.2% Confidence Window [16:32 – 16:36] • Commuters save 6 minutes
+                ✓ Confidence Window [16:32 – 16:36] • Commuters save 6 minutes
               </div>
             </div>
           </div>
@@ -338,7 +332,7 @@ const Home = () => {
               <div className="stage-step-tag">STAGE 02</div>
               <h4 className="font-bold text-sm text-primary-navy mb-2">XGBoost ML Inference</h4>
               <p className="text-xs text-muted leading-relaxed m-0">
-                Processes block headways, weather caution orders, and historical dwell profiles in 21ms to predict section-by-section delay drift.
+                Processes block headways, weather caution orders, and historical dwell profiles to predict section-by-section delay drift.
               </p>
             </div>
 

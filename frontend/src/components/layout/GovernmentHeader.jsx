@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useApp } from '../../hooks/useApp';
 import { useAuth } from '../../hooks/useAuth';
 import { Train, ShieldAlert, User, LogOut, CheckCircle2, Info } from 'lucide-react';
-import IRLogo from '../../assets/indian_railways_logo.png';
+import IRLogo from '../../assets/logos/indian_railways_logo.png';
 import './layout.css';
 
 export const GovernmentHeader = () => {

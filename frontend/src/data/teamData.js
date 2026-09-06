@@ -67,23 +67,23 @@ export const teamData = {
   mentors: [
     {
       id: "mentor-1",
-      name: "Faculty Mentor",
-      role: "Academic Mentor & Research Guide",
-      affiliation: "Department of Computer Science & Engineering",
-      focus: "Algorithmic review, statistical modeling oversight, and machine learning pipeline architecture",
+      name: "Dr. Y. DHARSHAN",
+      role: "Assistant Professor(Sl.Grade)",
+      affiliation: "Sri Ramakrishna Engineering College",
+      focus: "Ph.D in Electrical Engineering. 13 years of teaching experience. Areas of interest: Control Systems, Sensor Fabrication, and Computer Vision & Automation.",
       avatarColor: "#475569",
-      initials: "FM",
-      tags: ["Faculty Guide", "Research Advisor"]
+      initials: "YD",
+      tags: ["Control Systems", "Computer Vision", "Automation"]
     },
     {
       id: "mentor-2",
-      name: "Domain Mentor",
-      role: "Railway Operations & Signalling Advisor",
-      affiliation: "Signalling & Mixed-Traffic Operations",
-      focus: "Indian Railways operational rulebook, section block clearance protocols, and junction loop precedence",
+      name: "Mrs. K. Prashanthini",
+      role: "Assistant Professor(Sr.Grade)",
+      affiliation: "Department of Robotics and Automation, SREC",
+      focus: "9 Years of teaching experience. Pursuing Ph.D in Wireless communication. Areas of interest includes Internet of Things, Wireless Communication and Sensor Networks.",
       avatarColor: "#1E293B",
-      initials: "DM",
-      tags: ["Domain Mentor", "Railway Operations"]
+      initials: "KP",
+      tags: ["IoT", "Wireless Communication", "Sensor Networks"]
     }
   ]
 };

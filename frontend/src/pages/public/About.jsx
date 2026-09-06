@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Clock, Activity, BrainCircuit, ArrowRight, Zap, GitCommit, CheckCircle2, Award, Sparkles, Map, Radio, XCircle, Gauge, Layers, Users, GraduationCap } from 'lucide-react';
-import VandeBharatSnow from '../../assets/vandeBharat_snow.png';
+import VandeBharatSnow from '../../assets/images/vandeBharat_snow.png';
+import teamLogo from '../../assets/logos/UNPAID_INTERNS.png';
+import srecLogo from '../../assets/logos/SRECLoGo_v3.svg';
 import { teamData } from '../../data/teamData';
 import './public.css';
 
@@ -30,11 +32,6 @@ const About = () => {
           />
         </div>
 
-        {/* Live HUD Pill on the image */}
-        <div className="about-blend-hud-pill">
-          <span className="live-dot-pulse"></span>
-          <span><strong>Trainset 18 (Vande Bharat)</strong> • 130 km/h All-Weather Speed Envelope • Southern Railway Corridor Prototype</span>
-        </div>
 
         {/* Seamless Indian Railways Gradient Blend Overlay */}
         <div className="about-blend-gradient-overlay"></div>
@@ -52,21 +49,6 @@ const About = () => {
               TrainCast replaces rigid, static railway timetables with dynamic machine learning. By evaluating locomotive power curves, live section speed recovery, and junction headways, TrainCast delivers realistic arrival windows to passengers and controllers.
             </p>
 
-            {/* Frosted Glass Key Metric Chips */}
-            <div className="about-blend-stats">
-              <div className="about-blend-stat-item">
-                <div className="about-blend-stat-val">94.2%</div>
-                <div className="about-blend-stat-lbl">ETA Precision</div>
-              </div>
-              <div className="about-blend-stat-item">
-                <div className="about-blend-stat-val">&lt; 21ms</div>
-                <div className="about-blend-stat-lbl">Inference Latency</div>
-              </div>
-              <div className="about-blend-stat-item">
-                <div className="about-blend-stat-val">60 km</div>
-                <div className="about-blend-stat-lbl">Benchmark (SA–ED)</div>
-              </div>
-            </div>
 
             {/* Action CTAs */}
             <div className="flex gap-3 items-center flex-wrap">
@@ -152,7 +134,6 @@ const About = () => {
                 <span className="badge badge-purple font-bold text-xs flex items-center gap-1">
                   <Sparkles size={13} /> TrainCast Dynamic ML Engine
                 </span>
-                <span className="badge badge-green font-mono text-xs font-bold">94.2% Precision</span>
               </div>
               <h3 className="font-bold text-lg text-primary-navy mb-2">
                 Physics-Informed Real-Time Forecasting
@@ -263,11 +244,8 @@ const About = () => {
                   <h4 className="font-bold text-base text-primary-navy m-0">Confidence-Aware Arrival Envelopes</h4>
                 </div>
                 <p className="text-xs text-muted leading-relaxed m-0 mb-3">
-                  Delivers probabilistic arrival intervals (e.g. 16:32 – 16:36) powered by gradient boosted regression (XGBoost) executed in under 21ms per inference cycle, accounting for weather caution and dwell variance.
+                  Delivers probabilistic arrival intervals (e.g. 16:32 – 16:36) powered by gradient boosted regression (XGBoost), accounting for weather caution and dwell variance.
                 </p>
-              </div>
-              <div className="about-bento-badge" style={{ backgroundColor: '#FEF3C7', color: '#B45309' }}>
-                <CheckCircle2 size={13} /> 94.2% Historical Accuracy Window [16:32 — 16:36 IST]
               </div>
             </div>
           </div>
@@ -308,6 +286,13 @@ const About = () => {
         <section id="team" className="team-showcase-section">
           <div className="text-center mb-5">
             <span className="clean-tag">Meet the Team</span>
+            <div className="flex flex-col justify-center items-center gap-3 mt-6 mb-4">
+              <img src={teamLogo} alt="Team Logo" style={{ height: '150px', objectFit: 'contain' }} />
+              <span style={{ color: '#64748B', fontStyle: 'italic', fontSize: '15px', fontWeight: '500' }}>from</span>
+              <a href="https://srec.ac.in/" target="_blank" rel="noopener noreferrer" title="Sri Ramakrishna Engineering College" style={{ transition: 'opacity 0.2s' }} onMouseOver={(e) => e.currentTarget.style.opacity = 0.8} onMouseOut={(e) => e.currentTarget.style.opacity = 1}>
+                <img src={srecLogo} alt="SREC Logo" style={{ height: '75px', objectFit: 'contain' }} />
+              </a>
+            </div>
             <h2 className="team-section-title">
               {teamData.teamName}
             </h2>

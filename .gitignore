@@ -27,6 +27,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# ----- Large Assets (too big for GitHub) -----
+*.zip
+frontend/public/vandebharat_frames/
+frontend/src/assets/vandebharat.zip
+
 # ----- Java / Spring Boot Backend -----
 target/
 *.class

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Lock } from 'lucide-react';
-import IRCTCLogo from '../../assets/IRCTC.png';
-import IRLogo from '../../assets/indian_railways_logo.png';
+import IRCTCLogo from '../../assets/logos/IRCTC.png';
+import IRLogo from '../../assets/logos/indian_railways_logo.png';
+import teamLogo from '../../assets/logos/UNPAID_INTERNS.png';
 import './layout.css';
 
 export const PublicHeader = () => {
@@ -69,6 +70,14 @@ export const PublicHeader = () => {
         </div>
 
         <div className="nav-right">
+          <Link to="/about#team" onClick={() => {
+            setTimeout(() => {
+              const el = document.getElementById('team');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }} style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }} title="Meet the Team">
+            <img src={teamLogo} alt="Team Logo" style={{ height: '54px', objectFit: 'contain' }} />
+          </Link>
           <a 
             href="https://www.irctc.co.in/" 
             target="_blank" 

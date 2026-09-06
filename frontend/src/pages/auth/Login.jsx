@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
-import IRLogo from '../../assets/indian_railways_logo.png';
+import IRLogo from '../../assets/logos/indian_railways_logo.png';
 import './auth.css';
 
 const Login = () => {
