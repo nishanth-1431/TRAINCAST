@@ -296,22 +296,18 @@ const About = () => {
             <h2 className="team-section-title">
               {teamData.teamName}
             </h2>
-            <p className="team-section-subtitle">
-              {teamData.teamMotto}
-            </p>
+
           </div>
 
           {/* 6 Team Member Cards Grid */}
           <div className="team-grid">
             {teamData.members.map((member) => (
-              <div key={member.id} className={`team-member-card${member.isLead ? ' team-lead-card' : ''}`}>
-                {/* Team Lead accent strip */}
-                {member.isLead && <div className="team-lead-accent-strip" />}
+              <div key={member.id} className="team-member-card">
                 <div>
                   <div className="team-member-top">
                     <div 
                       className={`team-member-avatar${member.isLead ? ' team-lead-avatar' : ''}`}
-                      style={{ backgroundColor: member.avatarColor }}
+                      style={{ background: member.avatarColor }}
                     >
                       {member.initials}
                     </div>
@@ -355,19 +351,19 @@ const About = () => {
 
             <div className="mentors-grid">
               {teamData.mentors.map((mentor) => (
-                <div key={mentor.id} className="mentor-card">
+                <div key={mentor.id} className="mentor-card-premium">
                   <div>
                     <div className="team-member-top">
                       <div 
                         className="team-member-avatar" 
-                        style={{ backgroundColor: mentor.avatarColor }}
+                        style={{ background: mentor.avatarColor }}
                       >
                         <GraduationCap size={24} />
                       </div>
                       <div>
                         <h4 className="team-member-name">{mentor.name}</h4>
-                        <div className="team-member-role" style={{ color: '#475569' }}>{mentor.role}</div>
-                        <div style={{ fontSize: '11px', color: '#64748B' }}>{mentor.affiliation}</div>
+                        <div className="team-member-role">{mentor.role}</div>
+                        <div className="mentor-affiliation">{mentor.affiliation}</div>
                       </div>
                     </div>
                     <p className="team-member-focus">{mentor.focus}</p>

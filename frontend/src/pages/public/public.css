@@ -1464,89 +1464,182 @@
 
 .team-member-card {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
 
+.team-member-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-20deg);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.team-member-card:hover::after {
+  animation: cardShine 0.7s ease-out forwards;
+}
+
+@keyframes cardShine {
+  100% { left: 200%; }
+}
+
 .team-member-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(6, 27, 64, 0.08);
-  border-color: var(--primary-navy);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(6, 27, 64, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-color: rgba(6, 27, 64, 0.15);
 }
 
 .team-member-top {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 14px;
+  gap: 18px;
+  margin-bottom: 20px;
 }
 
 .team-member-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 14px;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: 800;
-  font-size: 17px;
+  font-size: 20px;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ffffff;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-member-card:hover .team-member-avatar {
+  transform: scale(1.08) rotate(-4deg);
 }
 
 .team-member-name {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
-  color: var(--primary-navy);
-  margin: 0;
+  color: #0f172a;
+  margin: 0 0 4px 0;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .team-member-role {
   font-size: 12px;
-  font-weight: 600;
-  color: #0284C7;
-  margin-top: 3px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
 }
 
 .team-member-focus {
-  font-size: 12px;
-  color: #64748B;
-  line-height: 1.5;
-  margin: 0 0 16px 0;
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
 }
 
 .team-tags-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .team-tag-pill {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
-  background-color: #F1F5F9;
-  color: #475569;
-  padding: 3px 8px;
-  border-radius: 6px;
-  border: 1px solid #E2E8F0;
+  background-color: #f1f5f9;
+  color: #64748B;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
 }
 
 /* Mentors Grid */
 .mentors-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 20px;
+  gap: 24px;
+}
+
+/* Mentor Cards - High Tech Dark Mode */
+.mentor-card-premium {
+  background: linear-gradient(145deg, #0f172a, #1e293b);
+  border: 1px solid #334155;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mentor-card-premium:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.6), 0 0 20px rgba(56, 189, 248, 0.15);
+  border-color: #475569;
+}
+
+.mentor-card-premium .team-member-name {
+  color: #f8fafc;
+}
+
+.mentor-card-premium .team-member-role {
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mentor-card-premium .team-member-focus {
+  color: #94a3b8;
+}
+
+.mentor-card-premium .mentor-affiliation {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.mentor-card-premium .team-tag-pill {
+  background-color: rgba(255,255,255,0.05);
+  color: #cbd5e1;
+  border-color: rgba(255,255,255,0.1);
+}
+
+.mentor-card-premium .team-tag-pill:hover {
+  background-color: rgba(255,255,255,0.15);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.25);
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.mentor-card-premium .team-member-avatar {
+  background: linear-gradient(135deg, #334155, #0f172a) !important;
+  border-color: #475569;
+  color: #f8fafc;
 }
 
 .mentor-card {
@@ -1595,17 +1688,6 @@
 .team-lead-card:hover {
   box-shadow: 0 12px 28px rgba(0, 86, 179, 0.12);
   border-color: var(--railway-blue) !important;
-}
-
-/* Subtle top accent strip on lead card */
-.team-lead-accent-strip {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #0056B3, #38BDF8);
-  border-radius: 16px 16px 0 0;
 }
 
 /* Team Lead Badge */
@@ -1659,13 +1741,14 @@
 
 /* Skill tag hover */
 .team-tag-pill {
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .team-tag-pill:hover {
-  background-color: #E0E7FF;
-  color: var(--primary-navy);
-  border-color: #C7D2FE;
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Responsive: ensure 3-col on desktop, 2-col on tablet, 1-col on mobile */

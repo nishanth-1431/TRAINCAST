@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import minOfRailwaysLogo from '../../assets/logos/Ministry_of_Railways_India.png';
 import './layout.css';
 
 export const Footer = () => {
@@ -24,9 +23,8 @@ export const Footer = () => {
 
       <div className="footer-disclaimer-sub">
         <span>Prototype demonstration for Smart India Hackathon. Displayed operational data is simulated/replayed.</span>
-        <div className="flex items-center gap-2" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div className="flex items-center gap-2" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#94a3b8', fontSize: '13px', fontWeight: '500' }}>
           <span>Ministry of Railways</span>
-          <img src={minOfRailwaysLogo} alt="Ministry of Railways" style={{ height: '24px', objectFit: 'contain' }} />
         </div>
       </div>
     </footer>
