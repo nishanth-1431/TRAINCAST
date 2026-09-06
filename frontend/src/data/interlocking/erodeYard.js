@@ -46,10 +46,11 @@ export const ERODE_YARD_DATA = {
     { id: 'TRK-GOODS-EXIT', label: 'GOODS SIDING REJOIN', x1: 720, y1: 380, x2: 820, y2: 270, type: 'siding' }
   ],
 
-  // Platforms (Amber / Orange Island Blocks as seen in reference image)
   platforms: [
-    { id: 'PF-ISLAND-1-2', label: 'PLATFORM 1 & 2', x: 380, y: 152, width: 260, height: 26, number: 'PF 1 & 2' },
-    { id: 'PF-ISLAND-3-4', label: 'PLATFORM 3 & 4', x: 380, y: 282, width: 260, height: 26, number: 'PF 3 & 4' }
+    { id: 'ED-PF1', label: 'PLATFORM 1', x: 380, y: 115, width: 260, height: 18, number: 'PF 1' },
+    { id: 'ED-PF2', label: 'PLATFORM 2', x: 380, y: 165, width: 260, height: 18, number: 'PF 2' },
+    { id: 'ED-PF3', label: 'PLATFORM 3', x: 380, y: 245, width: 260, height: 18, number: 'PF 3' },
+    { id: 'ED-PF4', label: 'PLATFORM 4', x: 380, y: 295, width: 260, height: 18, number: 'PF 4' }
   ],
 
   // Signals (Color-coded circles with ID labels)

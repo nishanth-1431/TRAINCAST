@@ -1,9 +1,10 @@
 import { ERODE_YARD_DATA } from './erodeYard';
+import { CBE_YARD_DATA } from './cbeYard';
 import { SALEM_YARD_DATA } from './salemYard';
 import { KATPADI_YARD_DATA } from './katpadiYard';
-
 export const getYardDataByStation = (stationCode) => {
   switch(stationCode) {
+    case 'CBE': return CBE_YARD_DATA;
     case 'SA': return SALEM_YARD_DATA;
     case 'KPD': return KATPADI_YARD_DATA;
     case 'ED':
@@ -62,7 +63,9 @@ export const executeInterlockingRoute = (currentYard, routeId) => {
     train: targetRoute.heldTrain,
     signal: targetRoute.entrySignal,
     delayImpact: targetRoute.delayImpact,
-    feedMessage: `Interlocking locked route [${targetRoute.name}]. Signal ${targetRoute.entrySignal} cleared GREEN. TRAINCAST ETA recalculation triggered.`
+    source: 'REPLAY ENGINE',
+    feedMessage: `SIMULATED OPERATIONAL EVENT: Route [${targetRoute.name}] state changed. Signal ${targetRoute.entrySignal} cleared GREEN.`,
+    traincastResponse: 'ETA recalculation triggered'
   };
 
   return {
@@ -97,7 +100,9 @@ export const toggleBerthHold = (currentYard, routeId) => {
     train: targetRoute.heldTrain,
     signal: targetRoute.exitSignal,
     delayImpact: targetRoute.status === 'HOLDING' ? '+15m Precedence Hold' : '-4m Buffer Recovery',
-    feedMessage: `Station Interlocking: ${targetRoute.heldTrain} ${targetRoute.status === 'HOLDING' ? 'HELD on siding' : 'CLEARED to proceed'}. Signal aspect: ${exitSig?.aspect}.`
+    source: 'REPLAY ENGINE',
+    feedMessage: `SIMULATED OPERATIONAL EVENT: ${targetRoute.heldTrain} ${targetRoute.status === 'HOLDING' ? 'HELD on siding' : 'CLEARED to proceed'}. Signal aspect: ${exitSig?.aspect}.`,
+    traincastResponse: 'ETA recalculation triggered'
   };
 
   return {

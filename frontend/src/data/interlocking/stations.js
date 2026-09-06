@@ -13,6 +13,18 @@ export const INTERLOCKING_STATIONS = [
     schematicNote: 'Prototype Yard Schematic: 4 Passenger Platforms, Electric Loco Siding, Goods Loop Siding'
   },
   {
+    id: 'CBE',
+    name: 'Coimbatore Junction',
+    code: 'CBE',
+    division: 'Salem (SA)',
+    zone: 'Southern Railway (SR)',
+    type: 'Major Junction',
+    platforms: 6,
+    tracks: 8,
+    activeTrains: ['12671 Nilgiri Express', '20644 Vande Bharat'],
+    schematicNote: 'Prototype Yard Schematic: 6 Platforms, Through Lines, PGT Branch'
+  },
+  {
     id: 'SA',
     name: 'Salem Junction',
     code: 'SA',
